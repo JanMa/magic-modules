@@ -117,25 +117,10 @@ describe Provider::Terraform do
 
       it do
         is_expected.to eq(
-          {
-            update_url: 'url1',
-            update_verb: :POST,
-            update_id: nil,
-            fingerprint_name: nil
-          } =>
+          { update_url: 'url1', update_verb: :POST } =>
             [postUrl1, otherPostUrl1],
-          {
-            update_url: 'url2',
-            update_verb: :POST,
-            update_id: nil,
-            fingerprint_name: nil
-          } => [postUrl2],
-          {
-            update_url: 'url2',
-            update_verb: :PUT,
-            update_id: nil,
-            fingerprint_name: nil
-          } => [putUrl2]
+          { update_url: 'url2', update_verb: :POST } => [postUrl2],
+          { update_url: 'url2', update_verb: :PUT } => [putUrl2]
         )
       end
     end
