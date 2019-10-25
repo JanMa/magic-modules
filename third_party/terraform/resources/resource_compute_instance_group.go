@@ -71,11 +71,10 @@ func resourceComputeInstanceGroup() *schema.Resource {
 			},
 
 			"network": {
-				Type:             schema.TypeString,
-				Optional:         true,
-				Computed:         true,
-				DiffSuppressFunc: compareSelfLinkOrResourceName,
-				ForceNew:         true,
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+				ForceNew: true,
 			},
 
 			"project": {
